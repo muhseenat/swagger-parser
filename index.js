@@ -1,10 +1,10 @@
 const express = require('express');
 const axios = require('axios');
 const vm = require('vm');
-
+const cors = require("cors")
 const app = express();
 const PORT = 3000;
-
+app.use(cors())
 const fetchSwaggerDocFromJS = async (url) => {
   try {
     const res = await axios.get(url);
